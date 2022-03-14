@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: data-volume-mongodb-0
+  labels:
+    app: mongo
+spec:
+  capacity:
+    storage: 20Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  nfs:
+    server: 192.168.1.11
+    path: "/volume2/NFS/homelab/mongodb-volume/data-volume-mongodb-0"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: data-volume-mongodb-1
+  labels:
+    app: mongo
+spec:
+  capacity:
+    storage: 20Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  nfs:
+    server: 192.168.1.11
+    path: "/volume2/NFS/homelab/mongodb-volume/data-volume-mongodb-1"
