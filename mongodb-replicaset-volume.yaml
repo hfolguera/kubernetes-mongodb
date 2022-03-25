@@ -1,33 +1,31 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: data-volume-mongodb-0
-  labels:
-    app: mongo
+  name: datadir-mongodb-0
 spec:
+  storageClassName: "mongodb-volume"
   capacity:
-    storage: 20Gi
+    storage: 8Gi
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Recycle
   nfs:
     server: 192.168.1.11
-    path: "/volume2/NFS/homelab/mongodb-volume/data-volume-mongodb-0"
+    path: "/volume2/NFS/homelab/mongodb-volume/datadir-mongodb-0"
 ---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: data-volume-mongodb-1
-  labels:
-    app: mongo
+  name: datadir-mongodb-1
 spec:
+  storageClassName: "mongodb-volume"
   capacity:
-    storage: 20Gi
+    storage: 8Gi
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Recycle
   nfs:
     server: 192.168.1.11
-    path: "/volume2/NFS/homelab/mongodb-volume/data-volume-mongodb-1"
+    path: "/volume2/NFS/homelab/mongodb-volume/datadir-mongodb-1"
