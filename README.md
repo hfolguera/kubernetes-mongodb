@@ -8,12 +8,12 @@ helm repo add bitnami https://charts.bitnami.com/bitnami
 helm repo update
 ```
 
-### 2. Verify Jenkins HELM repo
+### 2. Verify MongoDB HELM repo
 ```
 helm search repo bitnami
 ```
 
-### 3. Create a Namespace for Jenkins
+### 3. Create a Namespace for MongoDB
 ```
 kubectl apply -f mongodb-namespace.yaml
 ```
